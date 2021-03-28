@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+       {% if messages%}
+         {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+         {% endfor %}
+       {% endif %}
+    {% endwith %}
+    <div class="container mt-3">
+        <h3 class="text-center">
+            Welcome to category Data
+        </h3>
+        <hr>
+        <a href="{{url_for('navigation')}}" class='btn btn-secondary '>Back</a>
+        <a href="{{url_for('new_category')}}" class='btn btn-primary float-right'>Add Data</a>
+        <br><br>
+        <div >
+    <table class='table table-striped'>
+        <tr>
+            <th>ID</th>
+            <th>wellbocorename</th>
+            <th>coretype</th>
+            <th>storeidentifier</th>
+            <th>ccfromdepth</th>
+            <th>cctodepth</th>
+            <th>coresecurityflag</th>
+            <th>catalogcorelength</th>
+            <th>hascorephotos</th>
+            <th>wasanalysed</th>
+            <th>topcoreformation</th>
+            <th>bottomcoreformation</th>
+            <th>cataloguepicturename</th>
+            <th>cataloguepicturesoftcopypath</th>
+            <th>cataloguepicturehyperlink</th>
+            <th>documentformat</th>
+            <th>filesize</th>
+            <th>securitygrade</th>
+            <th>openduedate</th>
+            <th>comments</th>
+            <th>corecatalogname</th>
+            <th>welloperator</th>
+            <th>wellbore</th>
+            <th>spuddate</th>
+            <th>corename</th>
+            <th>coredate</th>
+            <th>comment</th>
+            <th>createdby</th>
+            <th>datecreated</th>
+             <th>modifiedon</th>
+             <th>modifiedby</th>
+             <th>pictureuploaddate</th>
+             <th>reportuploaddate</th>
+             <th>cataloguereportsoftcopypath</th>
+             <th>cataloguereporthyperlink</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for info in infos %}
+           <tr>
+               <td>{{info.corecatalogid}}</td>
+               <td>{{info.wellborecorename}}</td>
+               <td>{{info.coretype}}</td>
+               <td>{{info.storeidentifier}}</td>
+               <td>{{info.catalogcorefromdepth}}</td>
+               <td>{{info.catalogcoretodepth}}</td>
+               <td>{{info.coresecurityflag}}</td>
+               <td>{{info.catalogcorelength}}</td>
+               <td>{{info.hascorephotos}}</td>
+               <td>{{info.wasanalysed}}</td>
+               <td>{{info.topcoreformation}}</td>
+               <td>{{info.bottomcoreformation}}</td>
+               <td>{{info.cataloguepicturename}}</td>
+               <td>{{info.cataloguepicturesoftcopypath}}</td>
+               <td>{{info.cataloguepicturehyperlink}}</td>
+               <td>{{info.documentformat}}</td>
+               <td>{{info.filesize}}</td>
+               <td>{{info.securitygrade}}</td>
+               <td>{{info.openduedate}}</td>
+               <td>{{info.comments}}</td>
+               <td>{{info.corecatalogname}}</td>
+               <td>{{info.welloperator}}</td>
+               <td>{{info.wellbore}}</td>
+               <td>{{info.spuddate}}</td>
+               <td>{{info.corename}}</td>
+               <td>{{info.coredate}}</td>
+               <td>{{info.comment}}</td>
+               <td>{{info.createdby}}</td>
+               <td>{{info.datecreated}}</td>
+               <td>{{info.modifiedon}}</td>
+               <td>{{info.modifiedby}}</td>
+               <td>{{info.pictureuploaddate}}</td>
+               <td>{{info.reportuploaddate}}</td>
+               <td>{{info.cataloguereportsoftcopypath}}</td>
+               <td>{{info.cataloguereporthyperlink}}</td>
+               
+               {% if current_user.role == 'admin' %}
+               <td><a href="/category/{{info.corecatalogid}}/update" class='btn btn-success'>Edit</a></td>
+               <td><a href="/category/delete/{{info.corecatalogid}}" class='btn btn-danger' onclick= "return confirm('Do you really want to delete ?');"  >Delete</a></td>
+               {% endif %}
+    
+           </tr>
+        {% endfor %}
+        
+    </table>
+     </div>
+    </div>
+    <br><br>
+    
+       <div class="card bg-secondary">
+        <footer class="footer text-center ">
+      <div class="container">
+        <span class="text-strong">Copyright &copy 2021 Petroleum Authority of Uganda</span>
+      </div>
+    </footer>
+       </div>
+   
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,189 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-md-4 offset-4">
+        <h3 class="text-center">
+          Update Wellborecore Data 
+      </h3>
+      <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+      <br>
+      <form method ="POST" action="/wellborecore/{{corebase1.wellborecoreid}}/update">
+          <div class="form-group">
+              <label for="wellborename">wellborename</label>
+              <input type="text" name='wellborename' class="form-control"  value='{{corebase1.wellborename}}' required>
+           
+          </div>
+          <div class="form-group">
+              <label for="corenumber">corenumber</label>
+              <input type="text" name='corenumber' class="form-control"  value='{{corebase1.corenumber}}' >
+           
+          </div>
+          <div class="form-group">
+              <label for="coredate">coredate</label>
+              <input type="date" name='coredate' class="form-control"  value='{{corebase1.coredate}}'>
+           
+          </div>
+         <div class="form-group">
+              <label for="coringcontractor">coringcontractor</label>
+              <input type="text"  name='coringcontractor' class="form-control"  value='{{corebase1.coringcontractor}}' required>
+           
+          </div>
+          <div class="form-group">
+              <label for="coretopmdrt">coretopmdrt</label>
+              <input type="text"  name='coretopmdrt' class="form-control"  value='{{corebase1.coretopmdrt}}'>
+           
+          </div>
+          <div class="form-group">
+              <label for="corebottommdrt">corebottommdrt</label>
+              <input type="text"  name='corebottommdrt' class="form-control"  value='{{corebase1.corebottommdrt}}' >
+           
+          </div>
+          <div class="form-group">
+              <label for="coretoptvd">coretoptvd</label>
+              <input type="text"  name ='coretoptvd' class="form-control"  value='{{corebase1.coretoptvd}}'>
+          </div>
+          <div class="form-group">
+              <label for="corebottomtvd">corebottomtvd</label>
+              <input type="text"  name='corebottomtvd' class="form-control"  value='{{corebase1.corebottomtvd}}' >
+            </div>
+            <div class="form-group">
+              <label for="cutlength">cutlength</label>
+              <input type="number" step="any" class="form-control" name='cutlength' value='{{corebase1.cutlength}}' required>
+            </div>
+            <div class="form-group">
+              <label for="cutlengthtvd">cutlengthtvd</label>
+              <input type="number" step="any" name='cutlengthtvd' class="form-control"  value='{{corebase1.cutlengthtvd}}' required>
+            </div>
+            <div class="form-group">
+              <label for="recoveredlength">recoveredlength</label>
+              <input type="number" step="any" class="form-control" name='recoveredlength' value='{{corebase1.recoveredlength}}' required>
+            </div>
+            <div class="form-group">
+              <label for="corerecovery">corerecovery</label>
+              <input type="number" step="any" class="form-control" name='corerecovery' value='{{corebase1.corerecovery}}' required>
+            </div>
+            
+        <div class="form-group">
+          <label for="topformation">topformation</label>
+          <input type="text" name='topformation' class="form-control"  value='{{corebase1.topformation}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="bottomformation">bottomformation</label>
+          <input type="text" name='bottomformation' class="form-control"  value='{{corebase1.bottomformation}}'>
+       
+      </div>
+      <div class="form-group">
+        <label for="corepicturesoftcopypath">corepicturesoftcopypath</label>
+        <input type="text" name='corepicturesoftcopypath' class="form-control"  value='{{corebase1.corepicturesoftcopypath}}' >
+      </div>
+      <div class="form-group">
+          <label for="corepicturehyperlink">corepicturehyperlink</label>
+          <input type="text" name='corepicturehyperlink' class="form-control"  value='{{corebase1.corepicturehyperlink}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="documentformat">documentformat</label>
+          <input type="text" name='documentformat' class="form-control"  value='{{corebase1.documentformat}}' >
+       
+      </div>
+      <div class="form-group">
+          <label for="filesize">filesize</label>
+          <input type="text" name='filesize' class="form-control"  value='{{corebase1.filesize}}' >
+       
+      </div>
+      <div class="form-group">
+          <label for="securitygrade">securitygrade</label>
+          <input type="text" name='securitygrade' class="form-control"  value='{{corebase1.securitygrade}}' >
+       
+      </div>
+      <div class="form-group">
+          <label for="openduedate">openduedate</label>
+          <input type="text" name='openduedate' class="form-control"  value='{{corebase1.openduedate}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="comments">comments</label>
+          <input type="text" name='comments' class="form-control"  value='{{corebase1.comments}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="documenttitle">documenttitle</label>
+          <input type="text" name='documenttitle' class="form-control"  value='{{corebase1.documenttitle}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="receivedate">receivedate</label>
+          <input type="text" name='receivedate' class="form-control"  value='{{corebase1.receivedate}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="documentdate">documentdate</label>
+          <input type="text" name='documentdate' class="form-control"  value='{{corebase1.documentdate}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="documentname">documentname</label>
+          <input type="text" name='documentname' class="form-control"  value='{{corebase1.documentname}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="cored">cored</label>
+          <input type="text" name='cored' class="form-control"  value='{{corebase1.cored}}' required>
+       
+      </div>
+      
+      <div class="form-group">
+          <label for="createdby">createdby</label>
+          <input type="text" name='createdby' class="form-control"  value='{{corebase1.createdby}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="datecreated">datecreated</label>
+          <input type="text" name='datecreated' class="form-control"  value='{{corebase1.datecreated}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="modifiedon">modifiedon</label>
+          <input type="text" name='modifiedon' class="form-control"  value='{{corebase1.modifiedon}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="modifiedby">modifiedby</label>
+          <input type="text" name='modifiedby' class="form-control"  value='{{corebase1.modifiedby}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="pictureuploaddate">pictureuploaddate</label>
+          <input type="text" name='pictureuploaddate' class="form-control"  value='{{corebase1.pictureuploaddate}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="reportuploaddate">reportuploaddate</label>
+          <input type="text" name='reportuploaddate' class="form-control"  value='{{corebase1.reportuploaddate}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="corereportsoftcopypath">corereportsoftcopypath</label>
+          <input type="text" name='corereportsoftcopypath' class="form-control"  value='{{corebase1.corereportsoftcopypath}}' required>
+       
+      </div>
+      <div class="form-group">
+          <label for="corereporthyperlink">corereporthyperlink</label>
+          <input type="text" name='corereporthyperlink' class="form-control"  value='{{corebase1.corereporthyperlink}}' required>
+       
+      </div>
+              <button type="submit" class="btn btn-primary mb-2">submit</button>
+              <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+      
+       </div>
+      
+</div>
+{% endblock %}

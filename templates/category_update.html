@@ -1,0 +1,195 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+        <div class="container mt-1">
+            <div class="mb-3">
+            <h3 class="text-center">Update Category Data</h3>
+             <br>
+           </div>
+           <div class="row">
+            <div class="col-md-4 offset-4">
+            <form method ="POST" action="/category/{{category1.corecatalogid}}/update">
+                <div class="form-group">
+                    <label for="wasanalysed">wasanalysed</label>
+                    <input type="text" name='wasanalysed' class="form-control"  value='{{category1.wasanalysed}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="coretype">coretype</label>
+                    <input type="text" name='coretype' class="form-control"  value='{{category1.coretype}}'>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="storeidentifier">storeidentifier</label>
+                    <input type="text" name='storeidentifier' class="form-control"  value='{{category1.storeidentifier}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="catalogcorefromdepth">catalogcorefromdepth</label>
+                    <input type="text" name='catalogcorefromdepth' class="form-control"  value='{{category1.catalogcorefromdepth}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="catalogcoretodepth">catalogcoretodepth</label>
+                    <input type="text" name='catalogcoretodepth' class="form-control"  value='{{category1.catalogcoretodepth}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="coresecurityflag">coresecurityflag</label>
+                    <input type="text" name='coresecurityflag' class="form-control"  value='{{category1.coresecurityflag}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="corelength">catalogcorelength</label>
+                    <input type="text" name ='catalogcorelength' class="form-control"  value='{{category1.catalogcorelength}}' required>
+                </div>
+                <div class="form-group">
+                    <label for="hascorephotos">hascorephotos</label>
+                    <input type="text" name='hascorephotos' class="form-control"  value='{{category1.hascorephotos}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="wellborecorename">wellborecorename</label>
+                    <input type="text" name='wellborecorename' class="form-control"  value='{{category1.wellborecorename}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="topcoreformation">topcoreformation</label>
+                    <input type="text" name='topcoreformation' class="form-control"  value='{{category1.topcoreformation}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="bottomcoreformation">bottomcoreformation</label>
+                    <input type="text" name='bottomcoreformation' class="form-control"  value='{{category1.bottomcoreformation}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="cataloguepicturename">cataloguepicturename</label>
+                    <input type="text" name='cataloguepicturename' class="form-control"  value='{{category1.cataloguepicturename}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="cataloguepicturesoftcopypath">cataloguepicturesoftcopypath</label>
+                    <input type="text" name='cataloguepicturesoftcopypath' class="form-control"  value='{{category1.cataloguepicturesoftcopypath}}' required>
+                 
+                </div>
+                
+                <div class="form-group">
+                    <label for="cataloguepicturehyperlink">cataloguepicturehyperlink</label>
+                    <input type="text" name='cataloguepicturehyperlink' class="form-control"  value='{{category1.cataloguepicturehyperlink}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="documentformat">documentformat</label>
+                    <input type="text" name='documentformat' class="form-control"  value='{{category1.documentformat}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="filesize">filesize</label>
+                    <input type="text" name='filesize' class="form-control"  value='{{category1.filesize}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="securitygrade">securitygrade</label>
+                    <input type="text" name='securitygrade' class="form-control"  value='{{category1.securitygrade}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="openduedate">openduedate</label>
+                    <input type="text" name='openduedate' class="form-control"  value='{{category1.openduedate}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="comments">comments</label>
+                    <input type="text" name='comments' class="form-control"  value='{{category1.comments}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="corecatalogname">corecatalogname</label>
+                    <input type="text" name='corecatalogname' class="form-control"  value='{{category1.corecatalogname}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="welloperator">welloperator</label>
+                    <input type="text" name='welloperator' class="form-control"  value='{{category1.welloperator}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="wellbore">wellbore</label>
+                    <input type="text" name='wellbore' class="form-control"  value='{{category1.wellbore}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="spuddate">spuddate</label>
+                    <input type="text" name='spuddate' class="form-control"  value='{{category1.spuddate}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="corename">corename</label>
+                    <input type="text" name='corename' class="form-control"  value='{{category1.corename}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="coredate">coredate</label>
+                    <input type="text" name='coredate' class="form-control"  value='{{category1.coredate}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="comment">comment</label>
+                    <input type="text" name='comment' class="form-control"  value='{{category1.comment}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="createdby">createdby</label>
+                    <input type="text" name='createdby' class="form-control"  value='{{category1.createdby}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="datecreated">datecreated</label>
+                    <input type="text" name='datecreated' class="form-control"  value='{{category1.datecreated}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="modifiedon">modifiedon</label>
+                    <input type="text" name='modifiedon' class="form-control"  value='{{category1.modifiedon}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="modifiedby">modifiedby</label>
+                    <input type="text" name='modifiedby' class="form-control"  value='{{category1.modifiedby}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="pictureuploaddate">pictureuploaddate</label>
+                    <input type="text" name='pictureuploaddate' class="form-control"  value='{{category1.pictureuploaddate}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="reportuploaddate">reportuploaddate</label>
+                    <input type="text" name='reportuploaddate' class="form-control"  value='{{category1.reportuploaddate}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="cataloguereportsoftcopypath">cataloguereportsoftcopypath</label>
+                    <input type="text" name='cataloguereportsoftcopypath' class="form-control"  value='{{category1.cataloguereportsoftcopypath}}' required>
+                 
+                </div>
+                <div class="form-group">
+                    <label for="cataloguereporthyperlink">cataloguereporthyperlink</label>
+                    <input type="text" name='cataloguereporthyperlink' class="form-control"  value='{{category1.cataloguereporthyperlink}}' required>
+                 
+                </div>
+        
+                <div class=" mt-3">
+                    <button type="submit" class="btn btn-primary mb-2">submit</button>
+                    <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+                </div>
+              </form>
+              
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

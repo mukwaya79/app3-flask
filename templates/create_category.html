@@ -1,0 +1,173 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-md-4 offset-4">
+        <h3 class="text-center">
+          Add Category info
+      </h3>
+     
+      <br>
+      <form method ="POST" action="{{url_for('new_category')}}">
+          <div class="form-group">
+            {{ form.wasanalysed.label(class="form-control-label") }}
+            {{ form.wasanalysed(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.coretype.label(class="form-control-label") }}
+            {{ form.coretype(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.storeidentifier.label(class="form-control-label") }}
+            {{ form.storeidentifier(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.catalogcorefromdepth.label(class="form-control-label") }}
+            {{ form.catalogcorefromdepth(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.catalogcoretodepth.label(class="form-control-label") }}
+            {{ form.catalogcoretodepth(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.coresecurityflag.label(class="form-control-label") }}
+            {{ form.coresecurityflag(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.catalogcorelength.label(class="form-control-label") }}
+            {{ form.catalogcorelength(class="form-control") }}
+          </div>
+          <div class="form-group">
+            {{ form.topcoreformation.label(class="form-control-label") }}
+            {{ form.topcoreformation(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.bottomcoreformation.label(class="form-control-label") }}
+            {{ form.bottomcoreformation(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.cataloguepicturesoftcopypath.label(class="form-control-label") }}
+            {{ form.cataloguepicturesoftcopypath(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.cataloguepicturehyperlink.label(class="form-control-label") }}
+            {{ form.cataloguepicturehyperlink(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.cataloguereportsoftcopypath.label(class="form-control-label") }}
+            {{ form.cataloguereportsoftcopypath(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.cataloguereporthyperlink.label(class="form-control-label") }}
+            {{ form.cataloguereporthyperlink(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.documentformat.label(class="form-control-label") }}
+            {{ form.documentformat(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.filesize.label(class="form-control-label") }}
+            {{ form.filesize(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.securitygrade.label(class="form-control-label") }}
+            {{ form.securitygrade(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.openduedate.label(class="form-control-label") }}
+            {{ form.openduedate(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.comments.label(class="form-control-label") }}
+            {{ form.comments(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.corecatalogname.label(class="form-control-label") }}
+            {{ form.corecatalogname(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.welloperator.label(class="form-control-label") }}
+            {{ form.welloperator(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.wellbore.label(class="form-control-label") }}
+            {{ form.wellbore(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.spuddate.label(class="form-control-label") }}
+            {{ form.spuddate(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.corename.label(class="form-control-label") }}
+            {{ form.corename(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.cataloguepicturename.label(class="form-control-label") }}
+            {{ form.cataloguepicturename(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.createdby.label(class="form-control-label") }}
+            {{ form.createdby(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.datecreated.label(class="form-control-label") }}
+            {{ form.datecreated(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.modifiedon.label(class="form-control-label") }}
+            {{ form.modifiedon(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.modifiedby.label(class="form-control-label") }}
+            {{ form.modifiedby(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.pictureuploaddate.label(class="form-control-label") }}
+            {{ form.pictureuploaddate(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.reportuploaddate.label(class="form-control-label") }}
+            {{ form.reportuploaddate(class="form-control") }}
+           
+          </div>
+          <div >
+            {{ form.submit(class='btn btn-primary btn-md')}}
+            <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    
+</div>
+{% endblock %}
+

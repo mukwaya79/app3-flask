@@ -1,0 +1,14 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron container mt-4 text-center">
+  <img src="{{url_for('static', filename='images/image001.jpg')}}" alt="logo"><br><br>
+    <h3 class='lead display-4'>CORE STORE</h3>
+    <hr>
+    <h4 class='lead text-center mb-5'>Welcome back <strong>{{current_user.role}}!!!</strong> </h4>
+    <a href="{{url_for('navigation')}}" type='button' class='btn btn-primary justify-content-center'>Navigation</a>
+  </div>
+  
+{% endblock %}
+ 

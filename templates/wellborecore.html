@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellbore Core</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+       {% if messages%}
+         {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+         {% endfor %}
+       {% endif %}
+    {% endwith %}
+    <div class="container mt-3">
+    <h3 class="text-center">
+        Welcome to Wellbore Core Data
+    </h3>
+    <hr>
+    <a href="{{url_for('navigation')}}" class='btn btn-secondary '>Back</a>
+    <a href="{{url_for('new_wellborecore')}}" class='btn btn-primary float-right'>Add Data</a>
+    <br><br>
+    <div >
+       
+            <table class='table table-striped'>
+        <tr>
+            <th>wellborename</th>
+            <th>cored</th>
+            <th>corenumber</th>
+            <th>coredate</th>
+            <th>coringcontractor</th>
+            <th>coretopMDRT</th>
+            <th>corebottommdrt</th>
+            <th>coretoptvd</th>
+            <th>corebottomtvd</th>
+            <th>cutlength</th>
+            <th>cutlengthtvd</th>
+            <th>recoveredlength</th>
+            <th>corerecovery</th>
+            <th>topformation</th>
+            <th>bottomformation</th>
+            <th>corepicturesoftcopypath</th>
+            <th>corepicturehyperlink</th>
+            <th>corereportsoftcopypath</th>
+            <th>corereporthyperlink</th>
+            <th>documentformat</th>
+            <th>filesize</th>
+            <th>securitygrade</th>
+            <th>openduedate</th>
+            <th>comments</th>
+            <th>documenttitle</th>
+            <th>receivedate</th>
+            <th>createdby</th>
+            <th>datecreated</th>
+            <th>modifiedon</th>
+            <th>modifiedby</th>
+            <th>pictureuploaddate</th>
+            <th>reportuploaddate</th>
+            <th>Record date</th>
+            <th></th>
+            <th></th>
+        </tr>
+         {% for info in infos %}
+           <tr>
+               <td>{{info.wellborename}}</td>
+               <td>{{info.cored}}</td>
+               <td>{{info.corenumber}}</td>
+               <td>{{info.coredate}}</td>
+               <td>{{info.coringcontractor}}</td>
+               <td>{{info.coretopmdrt}}</td>
+               <td>{{info.corebottommdrt}}</td>
+               <td>{{info.coretoptvd}}</td>
+               <td>{{info.corebottomtvd}}</td>
+               <td>{{info.cutlength}}</td>
+               <td>{{info.cutlengthtvd}}</td>
+               <td>{{info.recoveredlength}}</td>
+               <td>{{info.corerecovery}}</td>
+               <td>{{info.topformation}}</td>
+               <td>{{info.bottomformation}}</td>
+               <td>{{info.corepicturesoftcopypath}}</td>
+               <td>{{info.corepicturehyperlink}}</td>
+               <td>{{info.corereportsoftcopypath}}</td>
+               <td>{{info.corereporthyperlink}}</td>
+               <td>{{info.documentformat}}</td>
+               <td>{{info.filesize}}</td>
+               <td>{{info.securitygrade}}</td>
+               <td>{{info.openduedate}}</td>
+               <td>{{info.comments}}</td>
+               <td>{{info.documenttitle}}</td>
+               <td>{{info.receiveddate}}</td>
+               <td>{{info.createdby}}</td>
+               <td>{{info.datecreated}}</td>
+               <td>{{info.modifiedon}}</td>
+               <td>{{info.modifiedby}}</td>
+               <td>{{info.pictureuploaddate}}</td>
+               <td>{{info.reportuploaddate}}</td>
+                          
+               
+               <td>{{info.recorddate.strftime('%d-%m-%Y')}}</td>
+               {% if current_user.role == 'admin' %}
+               <td><a href="/wellborecore/{{info.wellborecoreid}}/update" class='btn btn-success'>Edit</a></td>
+               <td><a href="/wellborecore/delete/{{info.wellborecoreid}}" class='btn btn-danger' onclick= "return confirm('Do you really want to delete ?');">Delete</a></td>
+               {% endif %}
+           </tr>
+         {% endfor %}
+
+    </table>
+       
+    </div> 
+</div>
+<br><br>
+<div class="card bg-secondary">
+    <footer class="footer text-center ">
+      <div class="container">
+        <span class="text-strong">Copyright &copy 2021 Petroleum Authority of Uganda</span>
+      </div>
+    </footer>
+     </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+</body>
+</html>

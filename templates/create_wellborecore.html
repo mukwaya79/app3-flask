@@ -1,0 +1,193 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-3">
+   <div class="row">
+     <div class="col-md-4 offset-4">
+      <h3 class="text-center">
+        Add Wellbore Core info
+    </h3>
+
+    <br>
+    <form method ="POST" action="{{url_for('new_wellborecore')}}">
+        <div class="form-group">
+          {{ form.wellborename.label(class="form-control-label") }}
+          {{ form.wellborename(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.corenumber.label(class="form-control-label") }}
+          {{ form.corenumber(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.coredate.label(class="form-control-label") }}
+          {{ form.coredate(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.coringcontractor.label(class="form-control-label") }}
+          {{ form.coringcontractor(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.coretopmdrt.label(class="form-control-label") }}
+          {{ form.coretopmdrt(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.corebottommdrt.label(class="form-control-label") }}
+          {{ form.corebottommdrt(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.coretoptvd.label(class="form-control-label") }}
+          {{ form.coretoptvd(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.corebottomtvd.label(class="form-control-label") }}
+          {{ form.corebottomtvd(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.cutlength.label(class="form-control-label") }}
+          {{ form.cutlength(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.cutlengthtvd.label(class="form-control-label") }}
+          {{ form.cutlengthtvd(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.recoveredlength.label(class="form-control-label") }}
+            {{ form.recoveredlength(class="form-control") }}
+          </div>
+          <div class="form-group">
+            {{ form.corerecovery.label(class="form-control-label") }}
+            {{ form.corerecovery(class="form-control") }}
+          </div>
+          <div class="form-group">
+            {{ form.topformation.label(class="form-control-label") }}
+            {{ form.topformation(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.bottomformation.label(class="form-control-label") }}
+            {{ form.bottomformation(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.corepicturesoftcopypath.label(class="form-control-label") }}
+            {{ form.corepicturesoftcopypath(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.corepicturehyperlink.label(class="form-control-label") }}
+            {{ form.corepicturehyperlink(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.corereportsoftcopypath.label(class="form-control-label") }}
+            {{ form.corereportsoftcopypath(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.corereporthyperlink.label(class="form-control-label") }}
+            {{ form.corereporthyperlink(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.documentformat.label(class="form-control-label") }}
+            {{ form.documentformat(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.filesize.label(class="form-control-label") }}
+            {{ form.filesize(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.securitygrade.label(class="form-control-label") }}
+            {{ form.securitygrade(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.openduedate.label(class="form-control-label") }}
+            {{ form.openduedate(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.comments.label(class="form-control-label") }}
+            {{ form.comments(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.documenttitle.label(class="form-control-label") }}
+            {{ form.documenttitle(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.receivedate.label(class="form-control-label") }}
+            {{ form.receivedate(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.documentdate.label(class="form-control-label") }}
+            {{ form.documentdate(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.documentname.label(class="form-control-label") }}
+            {{ form.documentname(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.cored.label(class="form-control-label") }}
+            {{ form.cored(class="form-control") }}
+           
+          </div>
+          
+          <div class="form-group">
+            {{ form.createdby.label(class="form-control-label") }}
+            {{ form.createdby(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.datecreated.label(class="form-control-label") }}
+            {{ form.datecreated(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.modifiedon.label(class="form-control-label") }}
+            {{ form.modifiedon(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.modifiedby.label(class="form-control-label") }}
+            {{ form.modifiedby(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.pictureuploaddate.label(class="form-control-label") }}
+            {{ form.pictureuploaddate(class="form-control") }}
+           
+          </div>
+          <div class="form-group">
+            {{ form.reportuploaddate.label(class="form-control-label") }}
+            {{ form.reportuploaddate(class="form-control") }}
+           
+          </div>
+                  
+                                    
+        <div >
+          {{ form.submit(class='btn btn-primary btn-md')}}
+          <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+        </div>
+      </form>
+     </div>
+   </div>
+   
+</div>
+{% endblock %}
+
